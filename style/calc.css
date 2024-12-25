@@ -147,3 +147,42 @@ body{
     align-items: center;
     flex-wrap: nowrap;
 }
+
+.input-number {
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+    padding: 0.25em 1em;
+    border-radius: 0.15em;
+
+    max-width: 5em;
+
+    font-size: 1rem;
+}
+
+.parameter-result-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.parameters-result-button {
+
+    width: fit-content;
+
+    padding: 0;
+    margin:0;
+
+    padding: 0 .75em;
+
+    border-radius: 0.35em;
+    background-color: #D35400;
+    transition: backgound-color .2s;
+}
+
+.parameters-result-button:hover {
+    background-color: #9b3e00;
+    transition: backgound-color .2s;
+}

@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style/calc.css">
+    <link rel="stylesheet" type="text/css" href="./style/modals.css">
+    <script src="./scripts/jquery-3.7.1.min.js" type="module"></script>
     <title>Calculadora</title>
 </head>
 <body>
+    <script src="./scripts/cookies.js" type="module"></script>
     <script src="./scripts/core.js" type="module"></script>
+
 
     <div class="wrapper">
         <div class="header-machines">
             <p class="header-machines-text">De</p>
-            <div class="header-machines-machine">
-                <p class="header-machines-machine-id">IMM14</p>
+            <div id="from-machine" class="header-machines-machine">
+                <p class="header-machines-machine-id">---</p>
+            </div>
+            <div id="from-machine-add" class="header-machines-machine-add">
+                <p class="header-machines-machine-id">Adicionar IMM</p>
             </div>
             <p class="header-machines-text">Para</p>
-            <div class="header-machines-machine">
-                <p class="header-machines-machine-id">IMM17</p>
+            <div id="to-machine" class="header-machines-machine">
+                <p class="header-machines-machine-id">---</p>
+            </div>
+            <div id="to-machine-add" class="header-machines-machine-add">
+                <p class="header-machines-machine-id">Adicionar IMM</p>
             </div>
         </div>
 
         <div class="content">
             <div class="content-selected-machine-wrapper">
                 <div class="selected-machine-info">
-                    <p class="selected-machine-info-text">Maquina portadora do processo: </p>
-                    <div class="selected-machine-info-machine">
-                        <p class="selected-machine-info-machine-id">IMM14</p>
+                    <p class="selected-machine-info-text">Máquina Portadora</p>
+                    <div id="from_-selected-machine-info" class="selected-machine-info-machine">
+                        <p id="from_-selected-machine-info-id" class="selected-machine-info-machine-id">---</p>
                     </div>
                 </div>
             </div>
@@ -91,16 +101,49 @@
                             <option value="_m_s">m/s</option>
                         </select>
                     </label>
-                    <div class="parameter-result-wrapper">
+                    <div class="parameter-result-wrapper" tabindex="">
                         <div class="parameters-result-button">
-                            <p class="parameters-result-button-id">Resultado</p>
+                            <p class="parameters-result-button-id">Mostrar Resultado</p>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
-
     </div>
+
+    <!-- style="display: none;" -->
+    <div id="modal-add" class="modal">
+        <p id="modal-add-close-btn" class="close-btn">𝘅</p>
+        <div id="modal-window-add" class="modal-window">
+            <div class="modal-window-header">
+                <h3 class="moldal-window-header-title">Adicionar Nova Máquina</h3>
+
+                <div class="modal-window-container">
+                    <!-- <h3 class="modal-window-container-title">Configurações da Máquina</h3> -->
+                    <div class="modal-window-container-controls">
+                        <label class="modal-window-container-controls-control">
+                            <p class="modal-window-container-controls-control">Nome/ID</p>
+                            <input id="modal-add-input_machineName" class="input-text" placeholder="ex: IMM014" type="text">
+                        </label>
+                        <label class="modal-window-container-controls-control">
+                            <p class="modal-window-container-controls-control">Diametro do Fuso</p>
+                            <input id="modal-add-input_screwDiameter" class="input-number" placeholder="ex: 18" type="number">
+                        </label>
+                        
+                        <div class="modal-window-container-result-wrapper">
+                            <div id="modal-add-submit"class="modal-window-container-result-button" parentModalId="modal-add" machineSlot="from_">
+                                <p class="modal-window-container-result-button-id">Adicionar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/headerMachines.js" type="module"></script>
+    <script src="./scripts/modal.js" type="module"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 var Cookies = {
-    setCookie : (coockie_name, coockie_value, exdays) => {
+    setCookie : (cookie_name, cookie_value, exdays) => {
         const d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         let expires = "expires=" + d.toUTCString();
-        document.cookie = coockie_name + "=" + coockie_value + ";" + expires + ";path=/";
+        document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/";
     },
-    getCookie : (coockie_name) => {
-        let name = coockie_name + "=";
+    getCookie : (cookie_name) => {
+        let name = cookie_name + "=";
         let cookies = document.cookie.split(';');
         for(let i = 0; i < cookies.length; i++) {
             let c = cookies[i];

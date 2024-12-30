@@ -1,0 +1,105 @@
+@media screen and (max-width: 100em) {
+    body {
+        width: 100vw;
+        min-width: none;
+        height: max-content;
+    }
+
+    .header, .footer {    
+        width: 95vw;
+        min-width: 0;
+        margin: 0 auto;
+        /* display: none; */
+    }
+
+    .wrapper {
+        width: 95vw;
+        min-width: 0;
+    }
+    .content {
+        flex-direction: column;
+        margin: 0 auto;
+        min-width: none;
+    }
+
+    .content-division {
+        margin: .25em 0;
+        min-width: none;
+
+        /* background-color: blue; */
+    }
+
+    .content-division.left, .content-division.right {
+        margin-right: 0;
+        margin-left: 0;
+        
+    }
+}
+
+@media screen and (max-width: 32em) {
+    body {
+        width: 100vw;
+        min-width: fit-content;
+        height: 100%;
+        font-size: 0.8rem;
+    }
+
+    .header, .footer {    
+        width: 95vw;
+        min-width: 0;
+        margin: 0 auto;
+        /* display: none; */
+    }
+
+    .wrapper {
+        width: 95vw;
+        min-width: none;
+        /* min-width: 35em; */
+    }
+    .content {
+        flex-direction: column;
+        margin: 0 auto;
+        min-width: none;
+    }
+
+    .content-division {
+        margin: .25em 0;
+        min-width: none;
+
+        /* background-color: RED; */
+    }
+
+    .content-division.left, .content-division.right {
+        margin-right: 0;
+        margin-left: 0;
+        
+    }
+    .parameters-controls {
+        min-width: 0;
+        max-width: 100vw;
+
+        display: flex;
+    }
+
+    .parameters-controls-control {
+        margin: 0.15em 0;
+    }
+
+    .input-units {
+        padding: 0.34em 1em;
+        font-size: 0.8rem;
+    }
+
+    .result-table, .result-table th, .result-table td {
+        border: .2em;
+        border-color: #2d3436;
+        border-style: solid;
+        border-collapse: collapse;
+        border-radius: .55em;
+
+        padding: .05em .05em;
+    
+    
+    }
+
+}

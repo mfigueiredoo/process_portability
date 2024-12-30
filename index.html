@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="interactive-widget=resizes-content"> -->
+
+    <link rel="stylesheet" type="text/css" href="./style/animations.css">
     <link rel="stylesheet" type="text/css" href="./style/calc.css">
     <link rel="stylesheet" type="text/css" href="./style/modals.css">
+    <link rel="stylesheet" type="text/css" href="./style/resultTable.css">
+    <link rel="stylesheet" type="text/css" href="./style/mediaQueries.css">
     <script src="./scripts/jquery-3.7.1.min.js" type="module"></script>
-    <title>Calculadora</title>
+    <title>process_portability</title>
 </head>
 <body>
     <script src="./scripts/cookies.js" type="module"></script>
     <script src="./scripts/core.js" type="module"></script>
 
+    <div class="header">
+        <h1 class="page-title">#process_portability</h1>
+    </div>
 
     <div class="wrapper">
         <div class="header-machines">
@@ -29,92 +37,257 @@
             <div id="to-machine-add" class="header-machines-machine-add">
                 <p class="header-machines-machine-id">Adicionar IMM</p>
             </div>
+            <div class="header-wrapper">
+                <div class="header-clear-cookies">
+                    <img src="./img/trash_can.png" class="header-clear-cookies-img">
+                </div>
+            </div>
         </div>
 
         <div class="content">
-            <div class="content-selected-machine-wrapper">
-                <div class="selected-machine-info">
-                    <p class="selected-machine-info-text">Máquina Portadora</p>
-                    <div id="from_-selected-machine-info" class="selected-machine-info-machine">
-                        <p id="from_-selected-machine-info-id" class="selected-machine-info-machine-id">---</p>
+            <div class="content-division left">
+                <div class="content-selected-machine-wrapper">
+                    <div class="selected-machine-info">
+                        <!-- <p class="selected-machine-info-text">Máquina Portadora</p> -->
+                        <div id="from_-selected-machine-info" class="selected-machine-info-machine">
+                            <p id="from_-selected-machine-info-id" class="selected-machine-info-machine-id"> </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="parameters">
-                <h3 class="parameters-title">Parâmetros</h3>
-                <div class="parameters-controls">
-                    <label class="parameters-controls-control">
-                        <p class="parameters-controls-control">Curso de dosagem</p>
-                        <input class="input-number" type="number">
-                        <select class="input-units" name="units" id="dosing_stroke_units">
-                            <option value="_mm">mm</option>
-                            <option value="_cm_3">cm³</option>
-                        </select>
-                    </label>
-                    <label class="parameters-controls-control">
-                        <p class="parameters-controls-control">Curso de descompressão</p>
-                        <input class="input-number" type="number">
-                        <select class="input-units" name="units" id="descomp_stroke_units">
-                            <option value="_mm">mm</option>
-                            <option value="_cm_3">cm³</option>
-                        </select>
-                    </label>
-                    <label class="parameters-controls-control">
-                        <p class="parameters-controls-control">Posição de Comutação</p>
-                        <input class="input-number" type="number">
-                        <select class="input-units" name="units" id="tranfer_position_units">
-                            <option value="_mm">mm</option>
-                            <option value="_cm_3">cm³</option>
-                        </select>
-                    </label>
-                    <label class="parameters-controls-control">
-                        <p class="parameters-controls-control">Velocidade de Injeção</p>
-                        <input class="input-number" type="number">
-                        <select class="input-units" name="units" id="inj_speed_units">
-                            <option value="_mm_s">mm/s</option>
-                            <option value="_cm_3_s">cm³</option>
-                        </select>
-                    </label>
-                    <label class="parameters-controls-control">
-                        <p class="parameters-controls-control">Velocidade de Descompressão</p>
-                        <input class="input-number" type="number">
-                        <select class="input-units" name="units" id="descomp_speed_units">
-                            <option value="_mm_s">mm/s</option>
-                            <option value="_cm_3_s">cm³</option>
-                        </select>
-                    </label>
-                    <label class="parameters-controls-control">
-                        <p class="parameters-controls-control">Velocidade de Compactação</p>
-                        <input class="input-number" type="number">
-                        <select class="input-units" name="units" id="comp_speed_units">
-                            <option value="_mm_s">mm/s</option>
-                            <option value="_cm_3_s">cm³</option>
-                        </select>
-                    </label>
-                    <label class="parameters-controls-control">
-                        <p class="parameters-controls-control">Velocidade de Rotação</p>
-                        <input class="input-number" type="number">
-                        <select class="input-units" name="units" id="rot_speed_units">
-                            <option value="_rpm">1/min</option>
-                            <option value="_mm_s">mm/s</option>
-                            <option value="_m_s">m/s</option>
-                        </select>
-                    </label>
-                    <div class="parameter-result-wrapper" tabindex="">
-                        <div class="parameters-result-button">
-                            <p class="parameters-result-button-id">Mostrar Resultado</p>
+    
+                <div class="parameters">
+                    <h3 class="parameters-title">Parâmetros</h3>
+                    <div class="parameters-controls">
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Curso de dosagem</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="dosing_stroke_units">
+                                <option value="_mm">mm</option>
+                                <option value="_cm_3">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Curso de descompressão</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="descomp_stroke_units">
+                                <option value="_mm">mm</option>
+                                <option value="_cm_3">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Posição de Comutação</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="tranfer_position_units">
+                                <option value="_mm">mm</option>
+                                <option value="_cm_3">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Velocidade de Injeção</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="inj_speed_units">
+                                <option value="_mm_s">mm/s</option>
+                                <option value="_cm_3_s">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Velocidade de Descompressão</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="descomp_speed_units">
+                                <option value="_mm_s">mm/s</option>
+                                <option value="_cm_3_s">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Velocidade de Compactação</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="comp_speed_units">
+                                <option value="_mm_s">mm/s</option>
+                                <option value="_cm_3_s">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Velocidade de Rotação</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="rot_speed_units">
+                                <option value="_rpm">1/min</option>
+                                <option value="_mm_s">mm/s</option>
+                                <option value="_m_s">m/s</option>
+                            </select>
+                        </label>
+                        <div class="parameter-result-wrapper" tabindex="">
+                            <div class="parameters-result-button">
+                                <p class="parameters-result-button-id">Resultado</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="content-division right">
+                <div class="content-selected-machine-wrapper">
+                    <div class="selected-machine-info">
+                        <!-- <p class="selected-machine-info-text">Máquina Receptora</p> -->
+                        <div id="to_-selected-machine-info" class="selected-machine-info-machine">
+                            <p id="to_-selected-machine-info-id" class="selected-machine-info-machine-id"> </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="parameters">
+                    <h3 class="parameters-title">Resultado</h3>
+                    <div class="parameters-controls">
+                        <table class="result-table">
+                            <tr>
+                                <th id="result-table-header-not-used-cell"></th>
+                                <th>mm</th>
+                                <th>cm³</th>
+                                <th>mm/s</th>
+                                <th>cm³/s</th>
+                                <th>1/min</th>
+                                <th>m/s</th>
 
+                            </tr>
+                            <tr>
+                                <th>Curso de dosagem</th>
+                                <td>20</td>
+                                <td>18.650</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                            </tr>
+                            <tr>
+                                <th>Curso de descompressão</th>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                            </tr>
+                            <tr>
+                                <th>Posição de Comutação</th>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                            </tr>
+                            <tr>
+                                <th>Velocidade de Injeção</th>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                            </tr>
+                            <tr>
+                                <th>Velocidade de Descompressão</th>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                            </tr>
+                            <tr>
+                                <th>Velocidade de Compactação</th>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                            </tr>
+                            <tr>
+                                <th>Velocidade de Rotação</th>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                                <td>•••</td>
+                            </tr>
+                        </table>
+                        <!-- <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Curso de dosagem</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="dosing_stroke_units">
+                                <option value="_mm">mm</option>
+                                <option value="_cm_3">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Curso de descompressão</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="descomp_stroke_units">
+                                <option value="_mm">mm</option>
+                                <option value="_cm_3">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Posição de Comutação</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="tranfer_position_units">
+                                <option value="_mm">mm</option>
+                                <option value="_cm_3">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Velocidade de Injeção</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="inj_speed_units">
+                                <option value="_mm_s">mm/s</option>
+                                <option value="_cm_3_s">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Velocidade de Descompressão</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="descomp_speed_units">
+                                <option value="_mm_s">mm/s</option>
+                                <option value="_cm_3_s">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Velocidade de Compactação</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="comp_speed_units">
+                                <option value="_mm_s">mm/s</option>
+                                <option value="_cm_3_s">cm³</option>
+                            </select>
+                        </label>
+                        <label class="parameters-controls-control">
+                            <p class="parameters-controls-control">Velocidade de Rotação</p>
+                            <input class="input-number" type="number">
+                            <select class="input-units" name="units" id="rot_speed_units">
+                                <option value="_rpm">1/min</option>
+                                <option value="_mm_s">mm/s</option>
+                                <option value="_m_s">m/s</option>
+                            </select>
+                        </label> -->
+                        <!-- <div class="parameter-result-wrapper" tabindex="">
+                            <div class="parameters-result-button">
+                                <p class="parameters-result-button-id">Resultado</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- style="display: none;" -->
+    <div class="footer">
+        <p class="footer-description">&copy; 2025 #process_portability. Todos os direitos reservados.</p>
+        <p class="footer-description">Desenvolvido por <a class="author-link" href="https://github.com/mfigueiredoo" target="_blank" rel="noopener noreferrer">Miguel Figueiredo</a>.</p>
+    </div>
+
     <div id="modal-add" class="modal">
-        <p id="modal-add-close-btn" class="close-btn">𝘅</p>
+        <div id="modal-add-close-btn" class="close-btn">
+            <img id="modal-add-close-btn-img" class="close-btn-img" src="./img/close.png"></img>
+        </div>
         <div id="modal-window-add" class="modal-window">
             <div class="modal-window-header">
                 <h3 class="moldal-window-header-title">Adicionar Nova Máquina</h3>
@@ -132,7 +305,7 @@
                         </label>
                         
                         <div class="modal-window-container-result-wrapper">
-                            <div id="modal-add-submit"class="modal-window-container-result-button" parentModalId="modal-add" machineSlot="from_">
+                            <div id="modal-add-submit"class="modal-window-container-result-button" parentModalId="modal-add" machineSlot="">
                                 <p class="modal-window-container-result-button-id">Adicionar</p>
                             </div>
                         </div>
@@ -142,6 +315,40 @@
             </div>
         </div>
     </div>
+
+    <div id="modal-edit" class="modal">
+        <div id="modal-edit-close-btn" class="close-btn">
+            <img id="modal-edit-close-btn-img" class="close-btn-img" src="./img/close.png"></img>
+        </div>
+        <div id="modal-window-edit" class="modal-window">
+            <div class="modal-window-header">
+                <h3 class="moldal-window-header-title">Editar Máquina</h3>
+
+                <div class="modal-window-container">
+                    <!-- <h3 class="modal-window-container-title">Configurações da Máquina</h3> -->
+                    <div class="modal-window-container-controls">
+                        <label class="modal-window-container-controls-control">
+                            <p class="modal-window-container-controls-control">Nome/ID</p>
+                            <input id="modal-edit-input_machineName" class="input-text" placeholder="ex: IMM014" type="text">
+                        </label>
+                        <label class="modal-window-container-controls-control">
+                            <p class="modal-window-container-controls-control">Diametro do Fuso</p>
+                            <input id="modal-edit-input_screwDiameter" class="input-number" placeholder="ex: 18" type="number">
+                        </label>
+                        
+                        <div class="modal-window-container-result-wrapper">
+                            <div id="modal-edit-submit"class="modal-window-container-result-button" parentModalId="modal-edit" machineSlot="">
+                                <p class="modal-window-container-result-button-id">Editar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
 
     <script src="./scripts/headerMachines.js" type="module"></script>
     <script src="./scripts/modal.js" type="module"></script>

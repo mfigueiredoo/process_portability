@@ -1,0 +1,30 @@
+.result-table, .result-table th, .result-table td {
+    border: .3em;
+    padding: .75em .5em;
+    border-color: #2d3436;
+    border-style: solid;
+    border-collapse: collapse;
+
+    border-radius: .75em;
+
+}
+
+.result-table {
+    width: -webkit-fill-available;
+    border-radius: 1em;
+}
+
+.result-table th{
+    background-color: #4d595c;
+    margin: .3em;
+}
+
+#result-table-header-not-used-cell {
+    background-color: #4d595c88;
+}
+
+.result-table td {
+    text-align: center;
+    margin: .3em;
+
+}

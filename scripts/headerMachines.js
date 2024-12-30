@@ -1,4 +1,5 @@
 import Cookies from "./cookies.js"
+import Modal from "./modal.js"
 
 var updateMachine = (html_element_id, machine_cookie) => {
     if (!$(html_element_id)) return
@@ -44,15 +45,18 @@ var HeaderMachines = {
 }
 
 //======= EVENTS =======
-
+$('#from-machine').on("click", (e) => {
+    Modal.show($("#modal-edit")[0], "modal-edit", "from_")
+})
 $('#from-machine-add').on("click", (e) => {
-    $("#modal-add").css("display", "flex")
-    $("#modal-add-submit")[0].setAttribute("machineSlot", "from_")
+    Modal.show($("#modal-add")[0], "modal-add", "from_")
 })
 
+$('#to-machine').on("click", (e) => {
+    Modal.show($("#modal-edit")[0], "modal-edit", "to_")
+})
 $('#to-machine-add').on("click", (e) => {
-    $("#modal-add").css("display", "flex")
-    $("#modal-add-submit")[0].setAttribute("machineSlot", "to_")
+    Modal.show($("#modal-add")[0], "modal-add", "to_")
 })
 
 export default HeaderMachines

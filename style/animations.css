@@ -1,0 +1,71 @@
+@keyframes button_pulsar {
+    0% {
+        background-color: #4d595c;
+    }
+    50% {
+        background-color: #4d595c22;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(.2deg);
+    }
+    10% {
+        transform: rotate(2deg);
+    }
+    20% {
+        transform: rotate(-1.5deg);
+    }
+    40% {
+        transform: rotate(1deg);
+    }
+    50% {
+        transform: rotate(1.5deg) translate(0.075em, 0.075em);
+    }
+    60% {
+        transform: rotate(-.2deg);
+    }
+    80% {
+        transform: rotate(-1deg) translate(-0.075em, 0.075em);
+    }
+}
+
+@keyframes scale_0_to_1 {
+    0% {
+        transform: scale(0, 0);
+        
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes slide_from_top {
+    0% {
+        transform: translateY(-110vh);
+        
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes slide_from_bottom {
+    0% {
+        transform: translateY(110vh);
+        
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide_from_left {
+    0% {
+        transform: translateX(-110vw);
+        
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

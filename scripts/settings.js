@@ -1,5 +1,5 @@
 var Settings = {
-    cookiesDuration_days : 0.125,
+    cookiesDuration_days : 0.00694444444,
     card_control_input_ids: [
         "dosing-stroke",
         "descomp-stroke",

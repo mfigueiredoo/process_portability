@@ -74,14 +74,14 @@
         margin-left: 0;
         
     }
-    .parameters-controls {
+    .card-controls {
         min-width: 0;
         max-width: 100vw;
 
         display: flex;
     }
 
-    .parameters-controls-control {
+    .card-controls-control {
         margin: 0.15em 0;
     }
 

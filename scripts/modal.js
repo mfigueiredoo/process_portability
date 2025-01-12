@@ -39,7 +39,7 @@ var Modal = {
         if (!machineName_input_value) return
         if (!screwDiameter_input_value) return
 
-        let machine = new InjectionMoldingMachine(machineName_input_value, screwDiameter_input_value)        
+        let machine = new InjectionMoldingMachine(machineName_input_value, screwDiameter_input_value, [])        
         Cookies.setCookie(slot + "machine", JSON.stringify(machine), Settings.cookiesDuration_days)
 
         if (Cookies.getCookie(slot + "machine") != "") {

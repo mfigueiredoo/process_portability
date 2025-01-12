@@ -1,5 +1,7 @@
+import Card from "./cards.js"
 import Cookies from "./cookies.js"
 import Modal from "./modal.js"
+import SelectedMachineInfo from "./selectedMachineInfo.js"
 
 var updateMachine = (html_element_id, machine_cookie) => {
     if (!$(html_element_id)) return
@@ -21,8 +23,11 @@ var HeaderMachines = {
         }
         return false
     },
-    update : () => {        
-        if (HeaderMachines.getMachineFrom()) {
+    update : () => {
+        let machine_from = HeaderMachines.getMachineFrom()
+        let machine_to = HeaderMachines.getMachineTo()
+
+        if (machine_from) {
             $("#from-machine-add").css("display", "none")
             $("#from-machine").css("display", "block")
             updateMachine("from-machine", HeaderMachines.getMachineFrom())
@@ -32,7 +37,7 @@ var HeaderMachines = {
             $("#from-machine-add").css("display", "block")
         }
 
-        if (HeaderMachines.getMachineTo()) {
+        if (machine_to) {
             $("#to-machine-add").css("display", "none")
             $("#to-machine").css("display", "block")
             updateMachine("to-machine", HeaderMachines.getMachineTo())
@@ -41,6 +46,15 @@ var HeaderMachines = {
             $("#to-machine").css("display", "none")
             $("#to-machine-add").css("display", "block")
         }
+
+        if (machine_from && machine_to) {
+            Card.show($("#content-parameters")[0], "content-parameters")
+        }
+        else {
+            Card.hide($("#content-parameters")[0], "content-parameters")
+            Card.hide($("#content-absolute-result")[0], "content-absolute-result")
+        }
+
     }
 }
 
@@ -57,6 +71,14 @@ $('#to-machine').on("click", (e) => {
 })
 $('#to-machine-add').on("click", (e) => {
     Modal.show($("#modal-add")[0], "modal-add", "to_")
+})
+
+$('#header-clear-cookies-button').on("click", (e) => {
+    if (Cookies.deleteAllCookies()) {
+        HeaderMachines.update()
+        SelectedMachineInfo.update("from_")
+        SelectedMachineInfo.update("to_")
+    }
 })
 
 export default HeaderMachines

@@ -92,7 +92,7 @@ body{
 }
 
 .header-machines-text {
-    padding: 0 2em;
+    padding: 0 3vw;
 }
 
 .header-machines-machine, .selected-machine-info-machine {
@@ -222,6 +222,8 @@ body{
     background-color: #2D3436;
 
     animation: slide_from_left 1.75s 1 ease-out;
+
+    display: none;
 }
 
 .content-division.right {
@@ -243,7 +245,7 @@ body{
 
 }
 
-.parameters {
+.card {
     margin: 0.5em 0em;
     padding: .5em 0;
 
@@ -257,11 +259,11 @@ body{
     justify-content: space-between;
 }
 
-.parameters-title {
+.card-title {
     padding: 0 2em;
 }
 
-.parameters-controls {
+.card-controls {
     margin: 0 auto;
     padding: .5em 0;
 
@@ -269,8 +271,8 @@ body{
 
     border-radius: 0.35em;
 
-    max-width: 45vw;
-    min-width: 30em;
+    /* max-width: 45vw;
+    min-width: 30em; */
 
     flex-direction: column;
     flex-wrap: nowrap;
@@ -279,7 +281,22 @@ body{
 
 }
 
-.parameters-controls-control {
+.card-controls-control {
+
+    margin: 0.25em;
+
+    width: -webkit-fill-available;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.card-controls-control-text {
 
     margin: 0.25em;
 
@@ -344,7 +361,7 @@ body{
     outline: none;
 }
 
-.parameter-result-wrapper {
+.card-result-wrapper {
 
     padding-top: 2em;
 
@@ -354,7 +371,7 @@ body{
     align-items: center;
 }
 
-.parameters-result-button {
+.card-result-button {
 
     width: fit-content;
 
@@ -374,7 +391,7 @@ body{
     user-select: none;
 }
 
-.parameters-result-button:hover {
+.card-result-button:hover {
     /* box-shadow: 0 0 200em #faebd7; */
     transition: box-shadow .1s, text-shadow .1s, transform .1s;
     box-shadow: -.2em -.2em .5em .1em #faebd722, .2em .2em .5em .2em #171b1cbb;

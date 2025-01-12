@@ -48,10 +48,10 @@ var HeaderMachines = {
         }
 
         if (machine_from && machine_to) {
-            Card.show($("#content-parameters")[0], "content-parameters")
+            Card.show($("#content-controls")[0], "content-controls")
         }
         else {
-            Card.hide($("#content-parameters")[0], "content-parameters")
+            Card.hide($("#content-controls")[0], "content-controls")
             Card.hide($("#content-absolute-result")[0], "content-absolute-result")
         }
 

@@ -168,6 +168,7 @@ body{
 .header-clear-cookies-img {
     filter: drop-shadow(0 110vh #4d595c);
     transform: translateY(-110vh);
+    height: 2.5em;
 }
 
 .header-clear-cookies:hover .header-clear-cookies-img {
@@ -311,7 +312,7 @@ body{
     flex-wrap: nowrap;
 }
 
-.input-number {
+.input-number, .input-text {
     border: 0;
     padding: 0;
     margin: 0;
@@ -389,6 +390,10 @@ body{
     cursor: pointer;
 
     user-select: none;
+}
+
+.card-result-button.error {
+    animation: shake_error .1s 10 linear;
 }
 
 .card-result-button:hover {

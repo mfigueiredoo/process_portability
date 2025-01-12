@@ -20,6 +20,7 @@ var Card = {
 
 var getParameterValuesFromControls = () => {
     let parameters = []
+    let hasNotParametersPresent = true
 
     for(let i = 0; i < Settings.parameters_labels_p_htmlIDs.length; i++) {
         let elem_id = $("#" + Settings.parameters_labels_p_htmlIDs[i])[0].id
@@ -29,15 +30,36 @@ var getParameterValuesFromControls = () => {
         if (elem_value != "") {
             let param = new Parameter(elem_id, [new ParamData(elem_value, elem_unit)])
             parameters.push(param)
+            hasNotParametersPresent = false
         }
     }
 
+    if (hasNotParametersPresent) return false
     return parameters
 
 }
 
-$("#content-parameters-result-button").on("click", (e) => {
+$("#content-controls-result-button").on("click", (e) => {
 
+    let form_parameters = getParameterValuesFromControls()
+
+    if (!form_parameters){
+
+        
+
+        if ($(e.currentTarget).hasClass("error")) {
+            console.log()
+            setTimeout(() => {
+                $(e.currentTarget).removeClass("error");
+            }, 10);
+        }
+
+        setTimeout(() => {
+            $(e.currentTarget).addClass("error")
+        }, 20);
+        
+        return
+    }
 
     let from_cookie_str = Cookies.getCookie("from_machine")
     let to_cookie_str = Cookies.getCookie("to_machine")
@@ -50,7 +72,7 @@ $("#content-parameters-result-button").on("click", (e) => {
     let from_machine = new InjectionMoldingMachine(from_machine_obj.name, from_machine_obj.screw_diameter_mm)
     let to_machine = new InjectionMoldingMachine(to_machine_obj.name, to_machine_obj.screw_diameter_mm)
 
-    from_machine.setParameters(getParameterValuesFromControls())
+    from_machine.setParameters(form_parameters)
     Cookies.updateCookie("from_machine", JSON.stringify(from_machine), Settings.cookiesDuration_days)
 
     to_machine.setParameters(from_machine.getPortableParameters())
@@ -79,7 +101,7 @@ $("#content-parameters-result-button").on("click", (e) => {
                 if (to_mach_p.description == $(controls_labels[i])[0].id){
                     to_mach_p.data.forEach( (to_mach_p_d) => {
                         if (to_mach_p_d.unit == Settings.parameters_labels_select_option_html_values[k]) {
-                            table_content += '<td>' + to_mach_p_d.value.toFixed(3) + '</td>'
+                            table_content += '<td class="result-table-data">' + to_mach_p_d.value.toFixed(3) + '</td>'
                             hasData = true
                             return
                         }
@@ -87,7 +109,7 @@ $("#content-parameters-result-button").on("click", (e) => {
 
 
                     if (!hasData) {
-                        table_content += '<td>•••</td>'
+                        table_content += '<td></td>'  //'<td>•••</td>'
                     }
 
                     return

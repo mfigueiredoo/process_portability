@@ -69,3 +69,18 @@
         transform: translateX(0);
     }
 }
+
+@keyframes shake_error {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        /* transform: translateX(5px); */
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        /* transform: translateX(5px); */
+    }
+}

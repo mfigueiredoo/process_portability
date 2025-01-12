@@ -20,11 +20,15 @@
 }
 
 #result-table-header-not-used-cell {
-    background-color: #4d595c88;
+    background-color: #2d3436;
 }
 
 .result-table td {
     text-align: center;
     margin: .3em;
 
+}
+
+.result-table-data {
+    background-color: #232729;
 }

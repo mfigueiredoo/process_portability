@@ -22,41 +22,43 @@
         <div class="header-machines">
             <p class="header-machines-text">De</p>
             <div id="from-machine" class="header-machines-machine">
-                <p class="header-machines-machine-id">---</p>
+                <p class="header-machines-machine-id" alt="Editar Máquina">---</p>
             </div>
             <div id="from-machine-add" class="header-machines-machine-add">
-                <p class="header-machines-machine-id">Adicionar IMM</p>
+                <p class="header-machines-machine-id" alt="Adicionar Máquina">Adicionar IMM</p>
             </div>
             <p class="header-machines-text">Para</p>
             <div id="to-machine" class="header-machines-machine">
-                <p class="header-machines-machine-id">---</p>
+                <p class="header-machines-machine-id" alt="Editar Máquina">---</p>
             </div>
             <div id="to-machine-add" class="header-machines-machine-add">
-                <p class="header-machines-machine-id">Adicionar IMM</p>
+                <p class="header-machines-machine-id" alt="Adicionar Máquina">Adicionar IMM</p>
             </div>
             <div class="header-wrapper">
                 <div id="header-clear-cookies-button" class="header-clear-cookies">
-                    <img src="./img/trash_can.png" class="header-clear-cookies-img">
+                    <img src="./img/trash_can.png" class="header-clear-cookies-img" alt="Limpar Maáquinas">
                 </div>
             </div>
         </div>
 
         <div class="content">
-            <div id="content-parameters" class="content-division left">
+
+            <div id="content-controls" class="content-division left">
                 <div class="content-selected-machine-wrapper">
                     <div class="selected-machine-info">
-                        <!-- <p class="selected-machine-info-text">Máquina Portadora</p> -->
                         <div id="from_-selected-machine-info" class="selected-machine-info-machine">
                             <p id="from_-selected-machine-info-id" class="selected-machine-info-machine-id">•••</p>
                         </div>
                     </div>
                 </div>
-    
+                
+                
+                <!-- CARD CONTROLS -->
                 <div class="card">
                     <h3 class="card-title">Parâmetros</h3>
                     <div class="card-controls">
                         <label class="card-controls-control">
-                            <p id="dosing-stroke" class="card-controls-control-text">Curso de dosagem</p>
+                            <p id="dosing-stroke" class="card-controls-control-text">Curso Dosagem</p>
                             <input id="dosing-stroke-val" class="input-number" type="number">
                             <select class="input-units" name="units" id="dosing-stroke-units">
                                 <option value="_mm">mm</option>
@@ -64,7 +66,7 @@
                             </select>
                         </label>
                         <label class="card-controls-control">
-                            <p id="descomp-stroke" class="card-controls-control-text">Curso de descompressão</p>
+                            <p id="descomp-stroke" class="card-controls-control-text">Curso Descompressão</p>
                             <input id="descomp-stroke-val" class="input-number" type="number">
                             <select class="input-units" name="units" id="descomp-stroke-units">
                                 <option value="_mm">mm</option>
@@ -72,7 +74,7 @@
                             </select>
                         </label>
                         <label class="card-controls-control">
-                            <p id="tranfer-position" class="card-controls-control-text">Posição de Comutação</p>
+                            <p id="tranfer-position" class="card-controls-control-text">Posição Comutação</p>
                             <input id="tranfer-position-val" class="input-number" type="number">
                             <select class="input-units" name="units" id="tranfer-position-units">
                                 <option value="_mm">mm</option>
@@ -80,7 +82,7 @@
                             </select>
                         </label>
                         <label class="card-controls-control">
-                            <p id="inj-speed" class="card-controls-control-text">Velocidade de Injeção</p>
+                            <p id="inj-speed" class="card-controls-control-text">Velocidade Injeção</p>
                             <input id="inj-speed-val" class="input-number" type="number">
                             <select class="input-units" name="units" id="inj-speed-units">
                                 <option value="_mm_s">mm/s</option>
@@ -88,7 +90,7 @@
                             </select>
                         </label>
                         <label class="card-controls-control">
-                            <p id="descomp-speed" class="card-controls-control-text">Velocidade de Descompressão</p>
+                            <p id="descomp-speed" class="card-controls-control-text">Velocidade Descompressão</p>
                             <input id="descomp-speed-val" class="input-number" type="number">
                             <select class="input-units" name="units" id="descomp-speed-units">
                                 <option value="_mm_s">mm/s</option>
@@ -96,7 +98,7 @@
                             </select>
                         </label>
                         <label class="card-controls-control">
-                            <p id="comp-speed" class="card-controls-control-text">Velocidade de Compactação</p>
+                            <p id="comp-speed" class="card-controls-control-text">Velocidade Compactação</p>
                             <input id="comp-speed-val" class="input-number" type="number">
                             <select class="input-units" name="units" id="comp-speed-units">
                                 <option value="_mm_s">mm/s</option>
@@ -104,7 +106,7 @@
                             </select>
                         </label>
                         <label class="card-controls-control">
-                            <p id="rot-speed" class="card-controls-control-text">Velocidade de Rotação</p>
+                            <p id="rot-speed" class="card-controls-control-text">Velocidade Rotação</p>
                             <input id="rot-speed-val" class="input-number" type="number">
                             <select class="input-units" name="units" id="rot-speed-units">
                                 <option value="_rpm">1/min</option>
@@ -113,23 +115,24 @@
                             </select>
                         </label>
                         <div class="card-result-wrapper">
-                            <div id="content-parameters-result-button" class="card-result-button">
+                            <div id="content-controls-result-button" class="card-result-button">
                                 <p class="card-result-button-id">Resultado</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div id="content-absolute-result" class="content-division right">
                 <div class="content-selected-machine-wrapper">
                     <div class="selected-machine-info">
-                        <!-- <p class="selected-machine-info-text">Máquina Receptora</p> -->
                         <div id="to_-selected-machine-info" class="selected-machine-info-machine">
                             <p id="to_-selected-machine-info-id" class="selected-machine-info-machine-id">•••</p>
                         </div>
                     </div>
                 </div>
-    
+                
+                <!-- CARD RESULT -->
                 <div class="card">
                     <h3 class="card-title">Resultado</h3>
                     <div id="absolute-result-card-controls" class="card-controls">
@@ -145,6 +148,7 @@
         <p class="footer-description">Desenvolvido por <a class="author-link" href="https://github.com/mfigueiredoo" target="_blank" rel="noopener noreferrer">Miguel Figueiredo</a>.</p>
     </div>
 
+    <!-- MODAL ADD -->
     <div id="modal-add" class="modal">
         <div id="modal-add-close-btn" class="close-btn">
             <img id="modal-add-close-btn-img" class="close-btn-img" src="./img/close.png"></img>
@@ -154,7 +158,6 @@
                 <h3 class="moldal-window-header-title">Adicionar Nova Máquina</h3>
 
                 <div class="modal-window-container">
-                    <!-- <h3 class="modal-window-container-title">Configurações da Máquina</h3> -->
                     <div class="modal-window-container-controls">
                         <label class="modal-window-container-controls-control">
                             <p class="modal-window-container-controls-control">Nome/ID</p>
@@ -177,6 +180,7 @@
         </div>
     </div>
 
+    <!-- MODAL EDIT -->
     <div id="modal-edit" class="modal">
         <div id="modal-edit-close-btn" class="close-btn">
             <img id="modal-edit-close-btn-img" class="close-btn-img" src="./img/close.png"></img>
@@ -186,7 +190,6 @@
                 <h3 class="moldal-window-header-title">Editar Máquina</h3>
 
                 <div class="modal-window-container">
-                    <!-- <h3 class="modal-window-container-title">Configurações da Máquina</h3> -->
                     <div class="modal-window-container-controls">
                         <label class="modal-window-container-controls-control">
                             <p class="modal-window-container-controls-control">Nome/ID</p>
@@ -209,7 +212,7 @@
         </div>
     </div>
 
-    
+    <!-- SCRIPTS -->
     <script src="./scripts/settings.js" type="module"></script>
     <script src="./scripts/core.js" type="module"></script>
     <script src="./scripts/cookies.js" type="module"></script>

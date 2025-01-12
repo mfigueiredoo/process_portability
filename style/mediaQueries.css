@@ -51,6 +51,10 @@
         /* display: none; */
     }
 
+    .header-clear-cookies-img {
+        height: 2em;
+    }
+
     .wrapper {
         width: 95vw;
         min-width: none;
@@ -82,7 +86,23 @@
     }
 
     .card-controls-control {
-        margin: 0.15em 0;
+        margin: 0.25em 0;
+        justify-content: flex-end
+    }
+
+    .card-controls-control-text {
+        white-space: nowrap;
+    }
+
+    .input-text {
+        max-width: 5.5em;
+        min-width: 3em;
+    }
+
+    .input-number {
+        max-width: 5.5em;
+        min-width: 0;
+        width: 3em;
     }
 
     .input-units {

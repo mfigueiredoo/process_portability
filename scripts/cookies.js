@@ -5,7 +5,7 @@ var Cookies = {
         const d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         let expires = "expires=" + d.toUTCString();
-        document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/;domain="; //.mfigueiredoo.github.io;
+        document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/"; //.mfigueiredoo.github.io;
     },
     getCookie : (cookie_name) => {
         let name = cookie_name + "=";
@@ -27,7 +27,7 @@ var Cookies = {
         Cookies.setCookie(cookie_name, cookie_value, exdays)
     },
     deleteCookiebyName : (cookie_name) => {
-        document.cookie = cookie_name + '=; Max-Age=0'
+        document.cookie = cookie_name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'  //'=; Max-Age=0'
         if (Cookies.getCookie(cookie_name) == "") return true
         return false
     },

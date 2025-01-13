@@ -5,7 +5,7 @@ var Cookies = {
         const d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         let expires = "expires=" + d.toUTCString();
-        document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/;domain=.github.io;";
+        document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/;domain=mfigueiredoo.github.io;";
     },
     getCookie : (cookie_name) => {
         let name = cookie_name + "=";

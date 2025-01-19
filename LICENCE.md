@@ -1,7 +1,7 @@
-# LICENSE
+# LICENCE and COPYRIGHT
 
-## Copyright
-(c)2025 #process_portability by Miguel Figueiredo [https://github.com/mfigueiredoo]
-
-## Licence
+## ► Licence
 CC BY-NC 4.0
+
+## ► Copyright
+&copy;2025 #process_portability by Miguel Figueiredo

@@ -34,6 +34,8 @@ body{
     top: 0;
 
     border-radius: 0.35em;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 
     background-color: #2d3436;
 
@@ -390,6 +392,12 @@ body{
     cursor: pointer;
 
     user-select: none;
+    text-decoration: none;
+    color: inherit;
+
+    height: 3em;
+    display: flex;
+    align-items: center;
 }
 
 .card-result-button.error {
@@ -415,6 +423,8 @@ body{
     bottom: 0;
 
     border-radius: 0.35em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
     background-color: #2d3436;
 

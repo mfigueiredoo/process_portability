@@ -9,6 +9,8 @@ body{
     background: url(../img/background.webp);
     background-size: auto 100vh;
     background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
 
     backdrop-filter: blur(0.5em) brightness(1) saturate(0.4);
     -webkit-backdrop-filter: blur(0.5em) brightness(1) saturate(0.4);

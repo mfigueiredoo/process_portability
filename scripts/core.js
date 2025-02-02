@@ -1,4 +1,3 @@
-import Utils from "./utils.js";
 import InjectionMoldingMachine from "./classes/injectionMoldingMachine.js"
 import Cookies from "./cookies.js";
 import HeaderMachines from "./headerMachines.js";

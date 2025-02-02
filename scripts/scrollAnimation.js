@@ -4,7 +4,7 @@ var Scroll = {
         
         $('html, body').animate({
             scrollTop: element.offset().top
-        }, 2000);
+        }, 1000);
     }
 }
 

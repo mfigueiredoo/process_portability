@@ -182,3 +182,7 @@
     box-shadow: 0 0 1em #9b3e00;
     transition: box-shadow .2s;
 }
+
+.modal-window-container-result-button.error {
+    animation: shake_error .1s 10 linear;
+}

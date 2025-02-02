@@ -36,8 +36,25 @@ var Modal = {
         let machineName_input_value = $('#' + modal_id + "-input_machineName")[0].value
         let screwDiameter_input_value = Number($('#' + modal_id + "-input_screwDiameter")[0].value)
 
-        if (!machineName_input_value) return
-        if (!screwDiameter_input_value) return
+        if (!machineName_input_value || !screwDiameter_input_value) {
+            if ($("#" + modal_id + "-submit").hasClass("error")) {
+                setTimeout(() => {
+                    $("#" + modal_id + "-submit").removeClass("error");
+                }, 10);
+            }
+    
+            setTimeout(() => {
+                $("#" + modal_id + "-submit").addClass("error")
+            }, 20);
+            
+
+            setTimeout(() => {
+                $("#" + modal_id + "-submit").removeClass("error")
+            }, 2000);
+
+            return    
+        }
+        
 
         let machine = new InjectionMoldingMachine(machineName_input_value, screwDiameter_input_value, [])        
         Cookies.setCookie(slot + "machine", JSON.stringify(machine), Settings.cookiesDuration_days)

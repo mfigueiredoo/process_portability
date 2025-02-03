@@ -10,7 +10,7 @@ Relativamente, à rotação do fuso podemos perceber que ao utilizar uma unidade
 
 ## Pre-visualização
 
-<img src="./img/preview1920x1080.png" WIDTH="1920" HEIGHT="1080">
+<img src="./img/preview1920x1080.png">
 
 ## Podes testar aqui:
 <a href="https://mfigueiredoo.github.io/process_portability/">#process_portability</a>

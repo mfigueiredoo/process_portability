@@ -8,5 +8,9 @@ Em teoria, a velocidade de injeção deve ser semelhante em ambas as máquinas, 
 
 Relativamente, à rotação do fuso podemos perceber que ao utilizar uma unidade de velocidade angular(ex: RPM) em fusos cujo diâmetro seja diferente, obtemos uma velocidade periferica, igualmente, diferente. Deste modo, podemos concluir que o ideal é portar a rotação através de unidades de velocidade linear, tais como <b>mm/s</b> ou <b>m/s</b>.
 
+## Pre-visualização
+
+<img src="./img/preview1920x1080.png" WIDTH="1920" HEIGHT="1080">
+
 ## Podes testar aqui:
 <a href="https://mfigueiredoo.github.io/process_portability/">#process_portability</a>

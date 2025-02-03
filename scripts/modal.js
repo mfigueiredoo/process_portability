@@ -1,3 +1,4 @@
+import Card from "./cards.js";
 import InjectionMoldingMachine from "./classes/injectionMoldingMachine.js";
 import Cookies from "./cookies.js";
 import HeaderMachines from "./headerMachines.js";
@@ -64,6 +65,7 @@ var Modal = {
             Modal.clear(modal_element, modal_id)
             SelectedMachineInfo.update(slot)
             HeaderMachines.update()
+            Card.update($("#content-absolute-result")[0], "content-absolute-result")
         }
     }
 }

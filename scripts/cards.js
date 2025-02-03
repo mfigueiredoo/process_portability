@@ -6,6 +6,8 @@ import ResultTable from "./resultTable.js"
 import Scroll from "./scrollAnimation.js"
 import Settings from "./settings.js"
 
+
+
 var Card = {
     show : (card_element, card_id) => {
         $(card_element).css("display", "flex")
@@ -13,54 +15,33 @@ var Card = {
     },
     hide : (card_element, card_id) => {
         $(card_element).css("display", "none")
+    },
+    update : (card_element, card_id) => {
+        let form_parameters = getParameterValuesFromControls()
+        if (!form_parameters){
+
+            if ($(e.currentTarget).hasClass("error")) {
+                console.log()
+                setTimeout(() => {
+                    $(e.currentTarget).removeClass("error");
+                }, 10);
+            }
+
+            setTimeout(() => {
+                $(e.currentTarget).addClass("error")
+            }, 20);
+            
+            return
+        }
+
+        let table_content = getUpdatedResult(getParameterValuesFromControls())
+        ResultTable.create($("#absolute-result-card-controls")[0], table_content)
     }
 }
 
 //======= EVENTS =======
 
-var getParameterValuesFromControls = () => {
-    let parameters = []
-    let hasNotParametersPresent = true
-
-    for(let i = 0; i < Settings.parameters_labels_p_htmlIDs.length; i++) {
-        let elem_id = $("#" + Settings.parameters_labels_p_htmlIDs[i])[0].id
-        let elem_value = Number($("#" + elem_id + "-val")[0].value)
-        let elem_unit = $("#" + elem_id + "-units")[0].value
-
-        if (elem_value != "") {
-            let param = new Parameter(elem_id, [new ParamData(elem_value, elem_unit)])
-            parameters.push(param)
-            hasNotParametersPresent = false
-        }
-    }
-
-    if (hasNotParametersPresent) return false
-    return parameters
-
-}
-
-$("#content-controls-result-button").on("click", (e) => {
-
-    let form_parameters = getParameterValuesFromControls()
-
-    if (!form_parameters){
-
-        
-
-        if ($(e.currentTarget).hasClass("error")) {
-            console.log()
-            setTimeout(() => {
-                $(e.currentTarget).removeClass("error");
-            }, 10);
-        }
-
-        setTimeout(() => {
-            $(e.currentTarget).addClass("error")
-        }, 20);
-        
-        return
-    }
-
+var getUpdatedResult = (form_parameters) => {
     let from_cookie_str = Cookies.getCookie("from_machine")
     let to_cookie_str = Cookies.getCookie("to_machine")
 
@@ -109,7 +90,7 @@ $("#content-controls-result-button").on("click", (e) => {
 
 
                     if (!hasData) {
-                        table_content += '<td></td>'  //'<td>•••</td>'
+                        table_content += '<td></td>'
                     }
 
                     return
@@ -120,6 +101,55 @@ $("#content-controls-result-button").on("click", (e) => {
         table_content += '</tr>'
     }
     table_content += '</table>'
+
+
+    return table_content
+
+}
+
+var getParameterValuesFromControls = () => {
+    let parameters = []
+    let hasNotParametersPresent = true
+
+    for(let i = 0; i < Settings.parameters_labels_p_htmlIDs.length; i++) {
+        let elem_id = $("#" + Settings.parameters_labels_p_htmlIDs[i])[0].id
+        let elem_value = Number($("#" + elem_id + "-val")[0].value)
+        let elem_unit = $("#" + elem_id + "-units")[0].value
+
+        if (elem_value != "") {
+            let param = new Parameter(elem_id, [new ParamData(elem_value, elem_unit)])
+            parameters.push(param)
+            hasNotParametersPresent = false
+        }
+    }
+
+    if (hasNotParametersPresent) return false
+    return parameters
+
+}
+
+$("#content-controls-result-button").on("click", (e) => {
+
+    let form_parameters = getParameterValuesFromControls()
+
+    if (!form_parameters){
+
+        if ($(e.currentTarget).hasClass("error")) {
+            console.log()
+            setTimeout(() => {
+                $(e.currentTarget).removeClass("error");
+            }, 10);
+        }
+
+        setTimeout(() => {
+            $(e.currentTarget).addClass("error")
+        }, 20);
+        
+        return
+    }
+
+    
+    let table_content = getUpdatedResult(getParameterValuesFromControls())
 
 
     ResultTable.create($("#absolute-result-card-controls")[0], table_content)

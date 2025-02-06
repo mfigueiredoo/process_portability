@@ -3,7 +3,4 @@ var ResultTable = {
         $(parent_element).html(table_html)
     }
 }
-
-//======= EVENTS =======
-
 export default ResultTable

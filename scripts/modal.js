@@ -70,7 +70,6 @@ var Modal = {
     }
 }
 
-
 //======= EVENTS =======
 
 allModalIds.forEach(modal_id => {

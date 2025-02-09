@@ -7,19 +7,42 @@
     <meta name="keywords" content="Plastic injection molding, Injection molding processes, Injection Molding Machines, Portability of molding processes, Injection molding automation, Injection molding materials, Industrial injection molding, High precision injection molding, Thermoplastic injection molding, Nylon Injection Molding, ABS injection molding, Polymer injection molding, Automotive Component Injection Molding, Electronic components injection molding, Medical Parts Injection Molding, Consumable Parts Injection Molding, Injection molding of sports parts, Engineering Parts Injection Molding, Injection molding of high-strength parts, Injection molding of resistant parts">
 
     <link rel="stylesheet" type="text/css" href="./style/animations.css">
-    <link rel="stylesheet" type="text/css" href="./style/calc.css">
+    <link rel="stylesheet" type="text/css" href="./style/core.css">
     <link rel="stylesheet" type="text/css" href="./style/modals.css">
     <link rel="stylesheet" type="text/css" href="./style/resultTable.css">
     <link rel="stylesheet" type="text/css" href="./style/mediaQueries.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="image_src" type="image/png" href="thumbnail.png">
 
     <script src="./scripts/jquery-3.7.1.min.js" type="module"></script>
-    <title>process_portability</title>
+    <title>#process_portability</title>
 </head>
 <body>
     <div class="header">
         <h1 class="page-title">#process_portability</h1>
+
+        <div class="menu">
+            <div id="header-menu-button" class="menu-button notEnabled" TITLE="Mais Novidades, em breve!!">
+                <div class="menu-button-bar"></div>
+                <div class="menu-button-bar"></div>
+                <div class="menu-button-bar"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="master-nav-menu" class="nav-menu">
+        <div class="nav-menu-content">
+            <a id="link-portability_guide" class="nav-menu-link" href="#">Para Técnicos</a>
+            <a id="link-info" class="nav-menu-link notEnabled" href="javascript:void(0)">Mais Novidades Brevemente</a> 
+        </div>
+        <!-- <div class="nav-menu-content">
+            <a href="#">Instrumentos para Portabilidade </a>
+        </div>
+        <div class="nav-menu-content">
+            <a href="#">Instrumentos para Portabilidade </a>
+        </div> -->
     </div>
 
     <div class="wrapper">
@@ -40,7 +63,7 @@
             </div>
             <div class="header-wrapper">
                 <div id="header-clear-cookies-button" class="header-clear-cookies">
-                    <img src="./img/trash_can.png" class="header-clear-cookies-img" alt="Limpar Maáquinas">
+                    <img src="./img/trash_can.png" class="header-clear-cookies-img" alt="Limpar Máquinas">
                 </div>
             </div>
         </div>
@@ -143,10 +166,32 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="footer">
+        </div>
+
+        <div id="content-for_technicians" class="content-division bottom">
+                
+            <!-- CARD FOR_TECHNICIANS -->
+            <div class="card">
+
+                <h3 class="card-title">Para Técnicos</h3>
+    
+                <canvas class="for_technicians-viewport" style="background-color: #D35400;"></canvas>
+
+                <div class="selector">
+                    <span class="selector-button">◄</span>
+                    <span class="selector-item selected">•</span>
+                    <span class="selector-item">•</span>
+                    <span class="selector-item">•</span>
+                    <span class="selector-button">►</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- extended -->
+    <div id="page-footer" class="footer">
         <p class="footer-description">&copy; 2025 #process_portability. Todos os direitos reservados.</p>
         <p class="footer-description">Desenvolvido por <a class="author-link" href="https://github.com/mfigueiredoo" target="_blank" rel="noopener noreferrer">Miguel Figueiredo</a>.</p>
     </div>
@@ -221,6 +266,8 @@
     <script src="./scripts/cookies.js" type="module"></script>
     <script src="./scripts/modal.js" type="module"></script>
     <script src="./scripts/headerMachines.js" type="module"></script>
+    <script src="./scripts/menuButton.js" type="module"></script>
+    <script src="./scripts/navMenuLink.js" type="module"></script>
     <script src="./scripts/selectedMachineInfo.js" type="module"></script>
     <script src="./scripts/cards.js" type="module"></script>
 </body>

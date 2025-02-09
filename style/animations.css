@@ -70,6 +70,16 @@
     }
 }
 
+@keyframes slide_to_top {
+    0% {
+        transform: translateY(0vh);
+        
+    }
+    100% {
+        transform: translateY(-110vh);
+    }
+}
+
 @keyframes shake_error {
     0% {
         transform: translateX(0px);

@@ -17,6 +17,7 @@ body{
 
     min-height: 100vh;
 
+    user-select: none;
 
     display: flex;
     flex-direction: column;
@@ -41,14 +42,132 @@ body{
 
     background-color: #2d3436;
 
-    box-shadow: 0 0 4em 1em #171b1cbb, 0 0 10em 3em antiquewhite;
-    z-index: -1;
+    box-shadow: 0 0 4em 1em #171b1cbb, 0 0 10em 3em #faebd733;
+    z-index: 9999999;
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
 
     animation: slide_from_top .75s 1 ease-out;
+}
+
+.menu {
+
+    margin: 0 1em;
+
+    width: -webkit-fill-available;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu-button {
+    padding: 0.25em 0;
+    border-radius: 0.35em;
+    background-color: #d35400;
+    z-index: 9999;
+}
+
+.menu-button:hover {
+    transition: box-shadow .1s, text-shadow .1s, transform .1s;
+    box-shadow: -.2em -.2em .5em .1em #faebd722, .2em .2em .5em .2em #171b1cbb;
+    /* transform: scale(1.025, 1.025); */
+}
+
+.menu-button.notEnabled {
+    background-color: #4d595c;
+    cursor: not-allowed;
+}
+
+.menu-button.notEnabled .menu-button-bar {
+    opacity: 0.3;
+
+}
+
+.menu-button-bar {
+    width: 2.25em;
+    min-height: 0.35em;
+    background-color: antiquewhite;
+    margin: 0.35em 0.35em;
+}
+
+.nav-menu {
+    position: absolute;
+
+    width: 85vw;
+    min-width: 50em;
+    /* min-height: 30vh; */
+    height: -webkit-fill-available;
+    max-height: calc(100vh - 6em - .7em);
+
+    margin: 0.35em 0;
+
+    top: 6em;
+
+    border-radius: 0.35em;
+
+    background-color: #2d3436;
+    box-shadow: 0 0 4em 1em #171b1cbb, 0 0 10em 3em #faebd766;
+
+    z-index: 999;
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.nav-menu.hide {
+    transform: translateY(0vh);
+    animation: slide_to_top .75s 1 ease-out;
+    display: flex;
+}
+
+.nav-menu.show {
+    transform: translateY(0);
+    animation: slide_from_top .75s 1 ease-out;
+    display: flex;
+}
+
+.nav-menu-content {
+
+
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.nav-menu-link {
+
+    margin: 0;
+    padding: 0;
+
+    padding: .5em .5em;
+    margin: .25em .25em;
+
+    width: -webkit-fill-available;
+
+    border-radius: 0.35em;
+
+    background-color: #d35400;
+
+    text-decoration: none;
+    text-align: center;
+    color: antiquewhite;
+}
+
+.nav-menu-link.notEnabled {
+    background-color: #4d595c;
+    cursor: not-allowed;
 }
 
 .page-title {
@@ -239,6 +358,10 @@ body{
     margin-left: 0;
 }
 
+.content-division.bottom {
+    margin: 0.25em 0;
+}
+
 .selected-machine-info {
     display: flex;
     flex-direction: row;
@@ -266,6 +389,35 @@ body{
 
 .card-title {
     padding: 0 2em;
+}
+
+.selector {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: center;
+    align-content: flex-start;
+    user-select: none;
+
+    font-size: 2em;
+}
+
+.selector-button {
+    padding: 0.45em;
+
+    color: #4d595c;
+}
+.selector-button:hover {
+    color: antiquewhite; 
+}
+
+.selector-item {
+    color: #4d595c;
+}
+
+.selector-item.selected {
+    color: antiquewhite;
 }
 
 .card-controls {
@@ -412,7 +564,6 @@ body{
     box-shadow: -.2em -.2em .5em .1em #faebd722, .2em .2em .5em .2em #171b1cbb;
     /* transform: translate(0.04em, 0.04em); */
     transform: scale(1.025, 1.025);
-
 }
 
 .footer {
@@ -421,6 +572,7 @@ body{
     width: 85vw;
     min-width: 50em;
     min-height: 6em;
+    height: 6em;
 
     bottom: 0;
 
@@ -430,8 +582,8 @@ body{
 
     background-color: #2d3436;
 
-    box-shadow: 0 0 4em 1em #171b1cbb, 0 0 10em 3em antiquewhite;
-    z-index: -1;
+    box-shadow: 0 0 4em 1em #171b1cbb, 0 0 10em 3em  #faebd733;
+    z-index: 99;
 
     display: flex;
     align-items: center;
@@ -443,6 +595,11 @@ body{
     flex-direction: column;
     justify-content: baseline;
     align-items: center;
+}
+
+.footer.extended {
+    height: 16em;
+    transition: height .75s 1 ease-out;
 }
 
 .footer-description {

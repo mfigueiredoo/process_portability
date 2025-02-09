@@ -12,6 +12,14 @@
         /* display: none; */
     }
 
+    .nav-menu {
+        width: 95vw;
+        min-width: 0;
+        margin: 0 auto;
+        margin: .35em 0;
+        max-height: calc(100vh - 6em - .7em);
+    }
+
     .wrapper {
         width: 95vw;
         min-width: 0;
@@ -49,6 +57,14 @@
         min-width: 0;
         margin: 0 auto;
         /* display: none; */
+    }
+
+    .nav-menu {
+        width: 95vw;
+        min-width: 0;
+        margin: 0 auto;
+        margin: .35em 0;
+        max-height: calc(100vh - 6em - .7em);
     }
 
     .header-clear-cookies-img {

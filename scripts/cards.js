@@ -18,21 +18,8 @@ var Card = {
     },
     update : (card_element, card_id) => {
         let form_parameters = getParameterValuesFromControls()
-        if (!form_parameters){
-
-            if ($(e.currentTarget).hasClass("error")) {
-                console.log()
-                setTimeout(() => {
-                    $(e.currentTarget).removeClass("error");
-                }, 10);
-            }
-
-            setTimeout(() => {
-                $(e.currentTarget).addClass("error")
-            }, 20);
-            
-            return
-        }
+        
+        if (!form_parameters) return
 
         let table_content = getUpdatedResult(getParameterValuesFromControls())
         ResultTable.create($("#absolute-result-card-controls")[0], table_content)

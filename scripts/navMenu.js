@@ -13,7 +13,7 @@ var NavMenu = {
         }, 10);
 
         
-        Scroll.to($(navmenu_element))
+        Scroll.top($(navmenu_element))
         window.location = "#master-nav-menu"
 
     },

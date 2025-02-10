@@ -30,11 +30,35 @@
         min-width: none;
     }
 
+    .for_technicians-wrapper {
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: stretch;
+
+        overflow: hidden;
+
+        width: -webkit-fill-available;
+    }
+
+    .for_technicians-viewport {
+        margin: .35em;
+        padding: 2em;
+        box-shadow: none;
+
+        max-width: 15em;
+        min-width: 20em;
+    }
+
     .content-division {
         margin: .25em 0;
         min-width: none;
 
-        /* background-color: blue; */
     }
 
     .content-division.left, .content-division.right {
@@ -42,6 +66,17 @@
         margin-left: 0;
         
     }
+
+    .modal-window {
+        min-width: 60vw;
+    }
+
+    .go-to-top-btn {
+        right: .5em;
+        bottom: .5em;
+        z-index: 9999;
+    }
+
 }
 
 @media screen and (max-width: 32em) {
@@ -82,11 +117,39 @@
         min-width: none;
     }
 
+    .for_technicians-wrapper {
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: stretch;
+
+        overflow: hidden;
+        
+        width: -webkit-fill-available;
+    }
+    .for_technicians-viewport {
+        margin: .35em;
+        padding: 2em;
+        box-shadow: none;
+
+        min-width: -webkit-fill-available;
+        min-height: -webkit-fill-available;
+
+    }
+
+    .for_technicians-container {
+        text-align: start;
+    }
+
     .content-division {
         margin: .25em 0;
         min-width: none;
 
-        /* background-color: RED; */
     }
 
     .content-division.left, .content-division.right {
@@ -136,6 +199,16 @@
         padding: .05em .05em;
     
     
+    }
+
+    .modal-window {
+        min-width: 60vw;
+    }
+
+    .go-to-top-btn {
+        right: .5em;
+        bottom: .5em;
+        z-index: 9999;
     }
 
 }

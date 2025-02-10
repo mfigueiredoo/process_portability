@@ -2,27 +2,27 @@
     margin: 0;
     padding: 0;
 
-    position: absolute;
+    position: fixed;
     
     top: 0;
     left: 0;
 
-    min-width: 100vw;
+    min-width: -webkit-fill-available;
     min-height: 100vh;
 
-    /* background-color: #2D3436bb; */
-    background-color: #2D3436dd;
-    backdrop-filter: blur(.5em);
 
-    display: flex;
+    background-color: #2D343644;
+    backdrop-filter: blur(.25em);
+
+    display: none;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
 
-    display: none;
 
     animation: slide_from_top .5s 1 ease-out;
+    z-index: 9999;
 }
 
 .close-btn {
@@ -58,7 +58,10 @@
 }
 
 .modal-window {
+    position: relative;
+
     min-width: 40vw;
+    height: fit-content;
     /* min-height: 20vh; */
 
     border-radius: 0.35em;
@@ -69,6 +72,7 @@
 
 .modal-window-header {
     margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;

@@ -1,12 +1,18 @@
 var Scroll = {
-    to : (element) => {
+    top : (element) => {
 
-        if (!element) return        
+        if (!element) return
 
         $('html, body').animate({
             scrollTop: element.offset().top
-        }, 1000);
+        }, 1500);
     }
 }
+
+//======= EVENTS =======
+
+$('.go-to-top-btn').on('click', (e) => {
+    Scroll.top($(".header"))
+})
 
 export default Scroll

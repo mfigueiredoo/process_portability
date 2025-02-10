@@ -11,7 +11,7 @@ import Settings from "./settings.js"
 var Card = {
     show : (card_element, card_id) => {
         $(card_element).css("display", "flex")
-        Scroll.to($(card_element))
+        Scroll.top($(card_element))
     },
     hide : (card_element, card_id) => {
         $(card_element).css("display", "none")

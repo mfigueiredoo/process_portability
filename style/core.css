@@ -2,7 +2,6 @@ body{
     padding: 0;
     margin: 0;
 
-    background-color: antiquewhite;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: antiquewhite;
 
@@ -24,7 +23,7 @@ body{
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    z-index: -10;
+    /* z-index: 0; */
 }
 
 .header {
@@ -43,7 +42,7 @@ body{
     background-color: #2d3436;
 
     box-shadow: 0 0 4em 1em #171b1cbb, 0 0 10em 3em #faebd733;
-    z-index: 9999999;
+    z-index: 99;
 
     display: flex;
     align-items: center;
@@ -70,13 +69,12 @@ body{
     padding: 0.25em 0;
     border-radius: 0.35em;
     background-color: #d35400;
-    z-index: 9999;
+    z-index: 99;
 }
 
 .menu-button:hover {
-    transition: box-shadow .1s, text-shadow .1s, transform .1s;
+    transition: box-shadow .1s, text-shadow .1s;
     box-shadow: -.2em -.2em .5em .1em #faebd722, .2em .2em .5em .2em #171b1cbb;
-    /* transform: scale(1.025, 1.025); */
 }
 
 .menu-button.notEnabled {
@@ -124,19 +122,18 @@ body{
 }
 
 .nav-menu.hide {
-    transform: translateY(0vh);
+    /* transform: translateY(0vh); */
     animation: slide_to_top .75s 1 ease-out;
     display: flex;
 }
 
 .nav-menu.show {
-    transform: translateY(0);
+    /* transform: translateY(0); */
     animation: slide_from_top .75s 1 ease-out;
     display: flex;
 }
 
 .nav-menu-content {
-
 
     display: flex;
     align-items: stretch;
@@ -241,9 +238,8 @@ body{
 
 .header-machines-machine:hover {
     /* box-shadow: 0 0 200em #faebd7; */
-    transition: box-shadow .1s, transform .1s;
+    transition: box-shadow .1s;
     box-shadow: -.15em -.15em .5em .1em #faebd722, .15em .15em .5em .2em #171b1cbb;
-    transform: scale(1.025, 1.025);
 }
 
 .header-machines-machine-add {
@@ -297,10 +293,6 @@ body{
 .header-clear-cookies:hover .header-clear-cookies-img {
     filter: drop-shadow(0 110vh #D35400);
 }
-
-/* .header-machines-machine-id, .selected-machine-info-machine-id {
-    font-size: larger;
-} */
 
 .content {
     width: -webkit-fill-available;
@@ -391,16 +383,74 @@ body{
     padding: 0 2em;
 }
 
+.for_technicians-wrapper {
+    margin: 0;
+    padding: 0;
+    
+    width: -webkit-fill-available;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+
+    overflow: hidden;
+}
+
+.for_technicians-viewport {
+    border-radius: 0.35em;
+    margin: 1em 2em;
+    padding: 2em;
+
+    background: linear-gradient(45deg, #d3540044, #4d595c88, #0054d322);
+    box-shadow: 0 0 .75em .1em #0f1618;
+
+    /* min-width: -webkit-fill-available; */
+    min-height: -webkit-fill-available;
+
+    max-width: 15em;
+    min-width: 35em;
+
+}
+
+.for_technicians-container {
+    margin: 0;
+    padding: 0;
+}
+
+.for_technicians-title {
+    text-align: start;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+.for_technicians-pre_summary {
+    font-weight: bold;
+}
+
+/* .for_technicians-description {
+
+} */
+
+.for_technicians-conclusion {
+    font-weight: bold;
+}
+
 .selector {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
     align-content: flex-start;
     user-select: none;
 
     font-size: 2em;
+
+    height: 1em;
 }
 
 .selector-button {
@@ -560,10 +610,8 @@ body{
 
 .card-result-button:hover {
     /* box-shadow: 0 0 200em #faebd7; */
-    transition: box-shadow .1s, text-shadow .1s, transform .1s;
+    transition: box-shadow .1s, text-shadow .1s;
     box-shadow: -.2em -.2em .5em .1em #faebd722, .2em .2em .5em .2em #171b1cbb;
-    /* transform: translate(0.04em, 0.04em); */
-    transform: scale(1.025, 1.025);
 }
 
 .footer {
@@ -589,7 +637,8 @@ body{
     align-items: center;
     justify-content: center;
 
-    animation: slide_from_bottom .75s 1 ease-out;
+    /* animation: slide_from_bottom .75s 1 ease-out; */
+    animation: slide_from_top .75s 1 ease-out;
 
     display: flex;
     flex-direction: column;
@@ -615,4 +664,30 @@ body{
 
 .author-link:hover {
     text-decoration: underline;
+}
+
+.go-to-top-btn {
+    position: fixed;
+
+    margin: 0;
+    padding: .15em;
+
+    border-radius: .35em;
+
+    right: 2em;
+    bottom: 3em;
+
+    opacity: 0.5;
+
+    text-decoration: none;
+    color: antiquewhite;
+
+    background-color: #2d3436;
+
+    font-size: 2rem;
+}
+
+.go-to-top-btn:hover {
+    opacity: 1;
+    transition: opacity .75s 1 ease-out;
 }

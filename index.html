@@ -23,7 +23,7 @@
         <h1 class="page-title">#process_portability</h1>
 
         <div class="menu">
-            <div id="header-menu-button" class="menu-button notEnabled" TITLE="Mais Novidades, em breve!!">
+            <div id="header-menu-button" class="menu-button" TITLE="Mais Novidades, em breve!!">
                 <div class="menu-button-bar"></div>
                 <div class="menu-button-bar"></div>
                 <div class="menu-button-bar"></div>
@@ -34,15 +34,10 @@
 
     <div id="master-nav-menu" class="nav-menu">
         <div class="nav-menu-content">
-            <a id="link-portability_guide" class="nav-menu-link" href="#">Para Técnicos</a>
+            <a id="link-convert" class="nav-menu-link" href="#">Conversor de Parâmetros</a>
+            <a id="link-for_tech" class="nav-menu-link" href="#">Para Técnicos</a>
             <a id="link-info" class="nav-menu-link notEnabled" href="javascript:void(0)">Mais Novidades Brevemente</a> 
         </div>
-        <!-- <div class="nav-menu-content">
-            <a href="#">Instrumentos para Portabilidade </a>
-        </div>
-        <div class="nav-menu-content">
-            <a href="#">Instrumentos para Portabilidade </a>
-        </div> -->
     </div>
 
     <div class="wrapper">
@@ -82,7 +77,7 @@
                 
                 <!-- CARD CONTROLS -->
                 <div class="card">
-                    <h3 class="card-title">Parâmetros</h3>
+                    <h2 class="card-title">Parâmetros</h2>
                     <div class="card-controls">
                         <label class="card-controls-control">
                             <p id="dosing-stroke" class="card-controls-control-text">Curso Dosagem</p>
@@ -143,7 +138,7 @@
                         </label>
 
                         <div class="card-result-wrapper">
-                            <a href="#" id="content-controls-result-button" class="card-result-button">Resultado</a>
+                            <a href="javascript:void(0)" id="content-controls-result-button" class="card-result-button">Resultado</a>
                         </div>
                     </div>
                 </div>
@@ -160,7 +155,7 @@
                 
                 <!-- CARD RESULT -->
                 <div class="card">
-                    <h3 class="card-title">Resultado</h3>
+                    <h2 class="card-title">Resultado</h2>
                     <div id="absolute-result-card-controls" class="card-controls">
                         <!-- RESULT TABLE -->
                     </div>
@@ -169,23 +164,71 @@
 
         </div>
 
-        <div id="content-for_technicians" class="content-division bottom">
+        <div id="content-for_technicians" class="content-division bottom" style="display: flex;">
                 
             <!-- CARD FOR_TECHNICIANS -->
             <div class="card">
 
-                <h3 class="card-title">Para Técnicos</h3>
+                <h2 class="card-title">Para Técnicos</h2>
     
-                <canvas class="for_technicians-viewport" style="background-color: #D35400;"></canvas>
+                <div id="for_technicians-wrapper-0001" class="for_technicians-wrapper">
 
-                <div class="selector">
-                    <span class="selector-button">◄</span>
-                    <span class="selector-item selected">•</span>
-                    <span class="selector-item">•</span>
-                    <span class="selector-item">•</span>
-                    <span class="selector-button">►</span>
+                    <div id="for_technicians-viewport-0001" class="for_technicians-viewport">
+
+                        <div class="for_technicians-container">
+                            <h3 class="for_technicians-title">Temperatura do Polímero</h3>
+                            <p class="for_technicians-pre_summary">
+                                Quando o assunto é a portabilidade de um processo, muita atenção se deve ter com a temperatura real do "Melt".
+                            </p>
+                            <p class="for_technicians-description">
+                                De forma menos resumida, as temperaturas definidas para as bandas de aquecimento dos nosso cilindros de plastificação são meramente teóricas. Desta forma, devemos manter em consideração que existem, além da mudança do tempo de residência da nossa Matéria Prima, os desgastes acomulados das bandas de aquecimento e possíveis desvios na leitura dos termopares.<br><br>
+                                Em consequência corremos o risco de passar a trabalhar fora dos limites recomendados pela TDS(Tecnical Datasheet).
+                            </p>
+                            <p class="for_technicians-conclusion">
+                                Devemos sempre ajustar o "Setpoint" de cada banda de aquecimento de forma a aproximar a temperatura real do "Melt" entre as duas máquinas.
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div id="for_technicians-viewport-0002" class="for_technicians-viewport">
+    
+                        <div class="for_technicians-container">
+                            <h3 class="for_technicians-title">Temperatura do Molde</h3>
+                            <p class="for_technicians-pre_summary">
+                                A forma mais confiável de portabilizar a temperatura do molde é medir com um dispositivo apropriado diretamente em vários pontos da zona moldante.
+                            </p>
+                            <p class="for_technicians-description">
+                                Por vezes, os termorreguladores acabam por ser um pouco "discriminados" relativamente às manutenções/calibrações.<br>
+                                Quando se dá uma falha num destes periféricos, é rapidamente substituído por outro para não comprometer a entrega de uma produção.<br><br>
+                                Por vezes, este "novo" termorregulador pode alterar significativamente a temperatura real da superfície moldante,
+                                seja pelas variações de caudal ou por uma leitura menos precisa da sonda de temperatura.
+                            </p>
+                            <p class="for_technicians-conclusion">
+                                E se a sonda de temperatura do nosso termorregulador estivesse embutida nos nossos moldes?
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="for_technicians-viewport-0002" class="for_technicians-viewport">
+    
+                        <div class="for_technicians-container">
+                            <h3 class="for_technicians-title">Pressão de Injeção</h3>
+                            <p class="for_technicians-pre_summary">
+                                A pressão de injeção pode ser medida de duas formas: pressão hidráulica (P_HID) e pressão específica (P_ESP).
+                            </p>
+                            <p class="for_technicians-description">
+                                A pressão hidráulica é a pressão no óleo que impulsiona o cilindro hidráulico da injeção (cilindro que movimenta o fuso).<br>
+                                Enquanto a pressão específica é um cálculo da pressão exercida no plástico pelo fuso.<br><br>
+                                De modo muito generalizado, diz-se que a P_ESP é aproximadamente dez vezes a P_HID.<br>
+                                Atenção! Isto não funciona exatamente desta forma.
+                            </p>
+                            <p class="for_technicians-conclusion">
+                                Ainda registas os teus parâmetros com P_HID? A melhor forma para portabilizar as pressões de um processo é por P_ESP.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
         </div>
 
@@ -195,6 +238,8 @@
         <p class="footer-description">&copy; 2025 #process_portability. Todos os direitos reservados.</p>
         <p class="footer-description">Desenvolvido por <a class="author-link" href="https://github.com/mfigueiredoo" target="_blank" rel="noopener noreferrer">Miguel Figueiredo</a>.</p>
     </div>
+
+    <!-- <a class="go-to-top-btn" href="javascript:void(0)">🔝</a> -->
 
     <!-- MODAL ADD -->
     <div id="modal-add" class="modal">
@@ -270,5 +315,6 @@
     <script src="./scripts/navMenuLink.js" type="module"></script>
     <script src="./scripts/selectedMachineInfo.js" type="module"></script>
     <script src="./scripts/cards.js" type="module"></script>
+    <script src="./scripts/forTechViewport.js" type="module"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 body{
+    position: relative;
     padding: 0;
     margin: 0;
 
@@ -11,8 +12,8 @@ body{
     background-position: center;
     background-repeat: repeat;
 
-    backdrop-filter: blur(0.5em) brightness(1) saturate(0.4);
-    -webkit-backdrop-filter: blur(0.5em) brightness(1) saturate(0.4);
+    /* backdrop-filter: blur(0.5em) brightness(1) saturate(0.4); */
+    /* -webkit-backdrop-filter: blur(0.5em) brightness(1) saturate(0.4); */
 
     min-height: 100vh;
 
@@ -28,6 +29,19 @@ body{
 
     /* z-index: 0; */
 }
+
+.body-blur {
+    position: absolute;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    /* background-color: red; */
+
+    backdrop-filter: blur(0.5em) brightness(1) saturate(0.4);
+    -webkit-backdrop-filter: blur(0.5em) brightness(1) saturate(0.4);
+
+    z-index: -10;
+}
+
 
 .header {
     position: absolute;

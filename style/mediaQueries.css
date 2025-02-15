@@ -97,8 +97,13 @@
     .nav-menu {
         width: 95vw;
         min-width: 0;
+
+        height: auto;
+        min-height: 25vh;
+
         margin: 0 auto;
         margin: .35em 0;
+
         max-height: calc(100vh - 6em - .7em);
     }
 

@@ -117,3 +117,21 @@
         opacity: 0;
     }
 }
+
+@keyframes decor_scale {
+    0% {
+        background-size: 100% 100%;
+    }
+    25% {
+        background-size: 150% 150%;
+    }
+    50% {
+        background-size: 200% 100%;
+    }
+    75% {
+        background-size: 150% 200%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+}

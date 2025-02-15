@@ -116,12 +116,14 @@ body{
 
     width: 85vw;
     min-width: 50em;
-    /* min-height: 30vh; */
-    height: -webkit-fill-available;
+    min-height: 45vh;
+    height: auto;
     max-height: calc(100vh - 6em - .7em);
 
-    margin: 0.35em 0;
+    margin: 0.5em 0;
+    padding: 2em 0;
 
+    /* right: 7.5vw; */
     top: 6em;
 
     border-radius: 0.35em;
@@ -129,7 +131,7 @@ body{
     background-color: #2d3436;
     box-shadow: 0 0 4em 1em #171b1cbb, 0 0 10em 3em #faebd766;
 
-    z-index: 999;
+    z-index: 9;
     
     display: none;
     align-items: center;
@@ -417,6 +419,9 @@ body{
 }
 
 .for_technicians-viewport {
+
+    position: relative;
+
     border-radius: 0.35em;
     margin: 1em 2em;
     padding: 2em;
@@ -430,18 +435,73 @@ body{
     max-width: 15em;
     min-width: 35em;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.for_technicians-viewport.info {
+    /* background-color: #4d595c; */
+    background: #4d595c;
+}
+
+.for_technicians-decoration {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    border-radius: 0.35em;
+
+    background: linear-gradient(75deg, #ffffff00, #ffffff33, #ffffff22, #ffffff00, #ffffff00, #ffffff00, #ffffff33, #ffffff00, #ffffff33);
+
+    background-size: 100%;
+    opacity: 0.6;
+
+    animation: decor_scale 16s infinite ease-in-out;
+    
 }
 
 .for_technicians-container {
     margin: 0;
     padding: 0;
+
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: flex
+;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+
+.for_technicians-viewport-info-wrapper {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .for_technicians-title {
     text-align: start;
-    font-style: italic;
+    /* font-style: italic; */
     font-weight: bolder;
     font-size: 1.3em;
+}
+
+.for_technicians-seemore {
+    text-align: start;
+    font-weight: bolder;
+    font-size: 1.6em;
 }
 
 .for_technicians-pre_summary {

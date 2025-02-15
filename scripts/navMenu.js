@@ -37,4 +37,17 @@ var NavMenu = {
     } 
 }
 
+//======= EVENTS =======
+
+$("body").on("click", (e) => {    
+
+    if ($(e.target)[0] == $(".nav-menu")[0]) return
+    if ($(e.target)[0] == $(".menu-button")[0]) return    
+    if (($(e.target)[0] != $(".nav-menu")[0]) && $(".nav-menu").hasClass("hide")) return
+
+    if (($(e.target)[0] != $(".nav-menu")[0]) && $(".nav-menu").hasClass("show")) 
+        NavMenu.hide($(".nav-menu")[0], "nav-menu")
+
+})
+
 export default NavMenu
